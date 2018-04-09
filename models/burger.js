@@ -13,6 +13,13 @@ var burger = {
       name, false
     ], cb);
   },
+  remove: function(name, cb) {
+    orm.remove("burgers", [
+      "burger_name", "devoured"
+    ], [
+      name, false
+    ], cb);
+  },
   update: function(id, cb) {
     var condition = "id=" + id;
     orm.update("burgers", {
